@@ -1,0 +1,40 @@
+﻿@model IEnumerable<HrCRUDWebApp.Models.CandidateSkill>
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">Candidate skill id list</h2>
+		</div>
+		<div class="col-6 text-right">
+			<a asp-controller="CandidateSkill" asp-action="Create" class="btn btn-primary">Add new Candidate Skill connection</a>
+		</div>
+	</div>
+	@if (Model.Count() > 0)
+	{
+		<table class="table table-bordered table-striped" style="width: 100%">
+			<thead>
+				<tr>
+					<th>
+						Candidate Id
+					</th>
+					<th>
+						Skill Id
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (CandidateSkill c in Model)
+				{
+					<tr>
+						<td width="50%">@c.CandidateId</td>
+						<td width="50%">@c.SkillId</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	}
+	else
+	{
+		<p>No items created yet</p>
+	}
+</div>

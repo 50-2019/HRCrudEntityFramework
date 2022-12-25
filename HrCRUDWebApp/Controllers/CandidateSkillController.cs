@@ -38,13 +38,27 @@ namespace HrCRUDWebApp.Controllers
 				if(array2[i % array2.Length].Id == candidateSkillObj.SkillId)
 					bool2 = true;
 			}
-			if (bool1 && bool2) { 
-			_db.CandidatesSkill.Add(candidateSkillObj);
-			_db.SaveChanges();
-			return RedirectToAction("Index");
+			if (bool1 && bool2) {
+				if (ModelState.IsValid) { 
+					_db.CandidatesSkill.Add(candidateSkillObj);
+					_db.SaveChanges();
+					return RedirectToAction("Index");
+				}
+				return View(candidateSkillObj);
 			}
 			else
 			{ return RedirectToAction("Error"); }
+		}
+		[HttpGet("Delete/{CandidateId}/{SkillId}")]
+		public IActionResult Delete(int? CandidateId, int? SkillId)
+		{
+			var obj = _db.CandidatesSkill.Find(CandidateId, CandidateId);
+			if (obj == null)
+				return NotFound();
+
+			_db.CandidatesSkill.Remove(obj);
+			_db.SaveChanges();
+			return RedirectToAction("Index");
 		}
 		public IActionResult Error ()
 		{

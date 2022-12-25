@@ -2,10 +2,16 @@
 
 <div class = "container p-3">
 	<div class = "row pt-4">
-		<div class = "col-6">
+		<div class = "col-3">
 			<h2 class = "text-primary">Candidate list</h2>			 
 		</div>
-		<div class = "col-6 text-right">
+		<div class = "col-3">
+			<h3 class = "text-primary">Search for name</h3>			 
+		</div>
+		<div class="col-3">
+			<h2 class="text-primary">Candidate list</h2>
+		</div>
+		<div class = "col-3 text-right">
 			<a asp-controller="Candidate" asp-action="Create" class="btn btn-primary">Add new Candidate</a>
 		</div>
 	</div>
@@ -29,17 +35,29 @@
 					<th>
 						email
 					</th>
+					<th>
+						Delete/Update
+					</th>
 				</tr>
 			</thead>
 			<tbody>
 				@foreach(Candidate c in Model)
 				{
 					<tr>
-						<td width="20%">@c.Id</td>
-						<td width="20%">@c.FullName</td>
-						<td width="20%">@c.DateOfBirth.ToString("yyyy-MM-dd")</td>
-						<td width="20%">@c.ContactNumber</td>
-						<td width="20%">@c.Email</td>
+						<td width="16%">@c.Id</td>
+						<td width="16%">@c.FullName</td>
+						<td width="16%">@c.DateOfBirth.ToString("yyyy-MM-dd")</td>
+						<td width="16%">@c.ContactNumber</td>
+						<td width="16%">@c.Email</td>
+						<td width="16%">
+							<div class="col-6 text-right">
+								<div class= "w-100 btn-group"role="group">
+									<a asp-controller="Candidate" asp-action="Update" asp-route-Id="@c.Id" class="btn btn-primary">Update</a>
+									<a asp-controller="Candidate" asp-action="Delete" asp-route-Id="@c.Id" class="btn btn-primary">Delete</a>
+									<a asp-controller="Candidate" asp-action="Show" asp-route-Id="@c.Id" class="btn btn-primary">Show skills</a>
+								</div>
+							</div>
+						</td>
 					</tr>
 				}
 			</tbody>

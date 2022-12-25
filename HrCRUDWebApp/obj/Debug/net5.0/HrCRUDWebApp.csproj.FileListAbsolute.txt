@@ -447,3 +447,7 @@ C:\Users\brnov\source\repos\HrCRUDWebApp\HrCRUDWebApp\obj\Debug\net5.0\Razor\Vie
 C:\Users\brnov\source\repos\HrCRUDWebApp\HrCRUDWebApp\obj\Debug\net5.0\Razor\Views\CandidateSkill\Index.cshtml.g.cs
 C:\Users\brnov\source\repos\HrCRUDWebApp\HrCRUDWebApp\obj\Debug\net5.0\Razor\Views\CandidateSkill\Create.cshtml.g.cs
 C:\Users\brnov\source\repos\HrCRUDWebApp\HrCRUDWebApp\obj\Debug\net5.0\Razor\Views\CandidateSkill\Error.cshtml.g.cs
+C:\Users\brnov\source\repos\HrCRUDWebApp\HrCRUDWebApp\obj\Debug\net5.0\Razor\Views\Candidate\Update.cshtml.g.cs
+C:\Users\brnov\source\repos\HrCRUDWebApp\HrCRUDWebApp\obj\Debug\net5.0\Razor\Views\Skill\Update.cshtml.g.cs
+C:\Users\brnov\source\repos\HrCRUDWebApp\HrCRUDWebApp\obj\Debug\net5.0\Razor\Views\CandidateSkill\Update.cshtml.g.cs
+C:\Users\brnov\source\repos\HrCRUDWebApp\HrCRUDWebApp\obj\Debug\net5.0\Razor\Views\Candidate\Show.cshtml.g.cs

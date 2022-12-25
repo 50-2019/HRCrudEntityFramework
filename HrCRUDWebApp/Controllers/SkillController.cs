@@ -26,9 +26,50 @@ namespace HrCRUDWebApp.Controllers
 		[HttpPost]
 		public IActionResult Create(Skill skillObj)
 		{
-			_db.Skills.Add(skillObj);
+			if (ModelState.IsValid)
+			{
+				_db.Skills.Add(skillObj);
+				_db.SaveChanges();
+				return RedirectToAction("Index");
+			}
+			else
+			{
+				return View();
+			}
+		}
+		public IActionResult Delete(int? Id)
+		{
+			var obj = _db.Skills.Find(Id);
+			if (obj == null)
+				return NotFound();
+
+			_db.Skills.Remove(obj);
 			_db.SaveChanges();
 			return RedirectToAction("Index");
+		}
+		public IActionResult Update(int? Id)
+		{
+			if (Id == null)
+			{
+				return NotFound();
+			}
+			var obj = _db.Skills.Find(Id);
+			if (obj == null)
+			{
+				return NotFound();
+			}
+			return View(obj);
+		}
+		[HttpPost]
+		public IActionResult Update(Skill skillObj)
+		{
+			if (ModelState.IsValid)
+			{
+				_db.Skills.Update(skillObj);
+				_db.SaveChanges();
+				return RedirectToAction("Index");
+			}
+			return View();
 		}
 	}
 }

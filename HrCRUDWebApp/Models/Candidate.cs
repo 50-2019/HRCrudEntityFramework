@@ -3,13 +3,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
 namespace HrCRUDWebApp.Models
 {
     public class Candidate
     {
         public int Id { get; set; }
         [DisplayName("Candidate full name")]
-        public string FullName { get; set; }
+		[Required]
+		public string FullName { get; set; }
 		[DisplayName("Candidate date of birth")]
 		public DateTime DateOfBirth { get; set; }
 		[DisplayName("Candidate phone number")]

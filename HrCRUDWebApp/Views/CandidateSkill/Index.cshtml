@@ -26,8 +26,15 @@
 				@foreach (CandidateSkill c in Model)
 				{
 					<tr>
-						<td width="50%">@c.CandidateId</td>
-						<td width="50%">@c.SkillId</td>
+						<td width="33%">@c.CandidateId</td>
+						<td width="33%">@c.SkillId</td>
+						<td width="33%">
+						<div class="col-6 text-right">
+							<div class="w-100 btn-group" role="group">
+								<a asp-controller="CandidateSkill" asp-action="Delete" asp-route-CandidateId="@c.CandidateId" asp-route-SkillId="@c.SkillId" class="btn btn-primary">Delete</a>
+							</div>
+						</div>
+						</td>
 					</tr>
 				}
 			</tbody>

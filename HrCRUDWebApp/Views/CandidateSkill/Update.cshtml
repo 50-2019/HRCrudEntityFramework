@@ -1,19 +1,20 @@
 ﻿@model HrCRUDWebApp.Models.CandidateSkill
 
-<form method="post" asp-action="Create">
+<form method="post" asp-action="Update">
 	<div class="border p-3">
-		<div asp-validation-summary="All" class="text-danger"></div>
 		<div class="form-group row">
-			<h2 class="text-black-50 pl-3">Add Candidate Skill connection</h2>
+			<h2 class="text-black-50 pl-3">Update candidate</h2>
 		</div>
 		<div class="row">
 			<div class="col-12">
 				<div class="form-group row">
 					<div class="col-6">
 						<label asp-for="CandidateId"></label>
+						<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 					</div>
 					<div class="col-6">
 						<label asp-for="SkillId"></label>
+						<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 					</div>
 				</div>
 				<div class="form-group row">
@@ -21,13 +22,13 @@
 						<input asp-for="CandidateId" class="form-control" />
 					</div>
 					<div class="col-6">
-						<input asp-for="SkillId" class="form-control" />			
+						<input asp-for="SkillId" class="form-control" />
 					</div>
 				</div>
 				<div class="form-group row">
 					<div class="col-8 offset-2 row">
 						<div class="col">
-							<input type="submit" class="btn btn-info w-75" value="Insert" />
+							<input type="submit" class="btn btn-info w-75" value="Update" />
 						</div>
 						<div class="col">
 							<a asp-action="Index" class="btn btn-danger w-75">Back</a>
